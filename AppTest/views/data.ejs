@@ -1,0 +1,37 @@
+<%- include("_header") -%>
+
+<h1>Liste des Abonnées (<%= model.length %>)</h1>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Commentaires</th>
+        <th>Numéro tlfn</th>
+        <th>Addresse</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/createAbn">Ajouter</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const abn of model) { %>
+        <tr>
+          <td><%= abn.Nom %></td>
+          <td><%= abn.Prenom %></td>
+          <td><%= abn.Numero %></td>
+          <td><%= abn.Commentaires %></td>
+          <td><%= abn.Addresse %></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-warning" href="/editAbn/<%= abn.Abn_ID %>">Modifier</a>
+            <a class="btn btn-sm btn-danger" href="/deleteAbn/<%= abn.Abn_ID %>">Effacer</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("_footer") -%>
