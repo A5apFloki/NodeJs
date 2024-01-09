@@ -1,0 +1,37 @@
+<%- include("_header") -%>
+
+<h1>Liste des Prets (<%= model.length %>)</h1>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Abn_Nom</th>
+        <th>Abn_Prenom</th>
+        <th>Livre_Titre</th>
+        <th>Date de Pret</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/createPret">Ajouter</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const pret of model) { %>
+        <tr>
+          <td><%= pret.Pret_ID %></td>
+          <td><%= pret.Abn_Nom %></td>
+          <td><%= pret.Abn_Prenom %></td>
+          <td><%= pret.Livre_Titre %></td>
+          <td><%= pret.DatePret %></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-warning" href="/editPret/<%= pret.Pret_ID %>">Modifier</a>
+            <a class="btn btn-sm btn-danger" href="/deletePret/<%= pret.Pret_ID %>">Effacer</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("_footer") -%>

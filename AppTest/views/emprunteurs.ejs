@@ -1,0 +1,26 @@
+<%- include("_header") -%>
+
+<h1>Liste des Emprunteurs (<%= model.length %>)</h1>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID de l'Abonné</th>
+                <th>Nom de l'Abonné</th>
+                <th>Livres Empruntés</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% model.forEach(emprunteur => { %>
+                <tr>
+                    <td><%= emprunteur.Abn_ID %></td>
+                    <td><%= emprunteur.Nom %> <%= emprunteur.Prenom %></td>
+                    <td><%= emprunteur.LivresEmpruntes || "Aucun livre emprunté" %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include("_footer") -%>

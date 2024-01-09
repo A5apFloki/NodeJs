@@ -6,9 +6,13 @@
   <table class="table table-hover">
     <thead>
       <tr>
+        <th>Id</th>
         <th>Titre</th>
         <th>Auteur</th>
-        <th>Commentaires</th>
+        <th>NbrExemplaire</th>
+        <th>Commentaires</th> 
+        <th>Nombre d'Exemplaires Empruntés</th>
+        <th>Nombre d'Exemplaires Disponibles</th>
         <th class="d-print-none">
           <a class="btn btn-sm btn-success" href="/create">Ajouter</a>
         </th>
@@ -17,9 +21,13 @@
     <tbody>
       <% for (const book of model) { %>
         <tr>
+          <td><%= book.Livre_ID %></td>
           <td><%= book.Titre %></td>
           <td><%= book.Auteur %></td>
+          <td><%= book.NbrExemplaire %></td>
           <td><%= book.Commentaires %></td>
+          <td><%= book.NbrEmpruntes || 0 %></td>
+          <td><%= book.NombreDisponibles || 0 %></td>
           <td class="d-print-none">
             <a class="btn btn-sm btn-warning" href="/edit/<%= book.Livre_ID %>">Modifier</a>
             <a class="btn btn-sm btn-danger" href="/delete/<%= book.Livre_ID %>">Effacer</a>

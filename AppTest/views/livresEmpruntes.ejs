@@ -1,0 +1,34 @@
+<%- include("_header") -%>
+
+<h1>Les livres Empruntes (<%= model.length %>)</h1>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Pret_ID</th>
+        <th>Abn_ID</th>
+        <th>NomAbonne</th>
+        <th>PrenomAbonne</th>
+        <th>Livre_ID</th>
+        <th>Titre</th>
+        <th>DatePret</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const em of model) { %>
+        <tr>
+          <td><%= em.Pret_ID %></td>
+          <td><%= em.Abn_ID %></td>
+          <td><%= em.NomAbonne %></td>
+          <td><%= em.PrenomAbonne %></td>
+          <td><%= em.Livre_ID %></td>
+          <td><%= em.Titre %></td>
+          <td><%= em.DatePret %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("_footer") -%>

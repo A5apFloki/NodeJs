@@ -6,9 +6,10 @@
   <table class="table table-hover">
     <thead>
       <tr>
+        <th>Id</th>
         <th>Nom</th>
         <th>Prenom</th>
-        <th>Commentaires</th>
+        <th>Remarque</th>
         <th>Numéro tlfn</th>
         <th>Addresse</th>
         <th class="d-print-none">
@@ -19,10 +20,11 @@
     <tbody>
       <% for (const abn of model) { %>
         <tr>
+          <td><%= abn.Abn_ID %></td>
           <td><%= abn.Nom %></td>
           <td><%= abn.Prenom %></td>
-          <td><%= abn.Numero %></td>
           <td><%= abn.Commentaires %></td>
+          <td><%= abn.Numero %></td>
           <td><%= abn.Addresse %></td>
           <td class="d-print-none">
             <a class="btn btn-sm btn-warning" href="/editAbn/<%= abn.Abn_ID %>">Modifier</a>
